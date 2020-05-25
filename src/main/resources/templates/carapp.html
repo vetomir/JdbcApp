@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Car App</title>
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center">
+
+
+
+        <table  class=" pure-table pure-table-bordered" >
+            <thead>
+            <tr>
+                <th>Mark</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Year</th>
+            </tr>
+            </thead>
+            <tbody th:each="car: ${carFilter}">
+            <tr>
+
+                <td title="Mark"  th:text="${car.getMark()}"/>
+                <td title="Model" th:text="${car.getModel()}"/>
+                <td title="Color"  th:text="${car.getColor()}"/>
+                <td title="Year" th:text="${car.getYear()}"/>
+            </tr>
+            </tbody>
+        </table>
+
+        <form style="margin: 10px auto; display: flex" class="pure-form" th:action="@{/}">
+            <input class="pure-input-1-2" placeholder="from..." type="number" th:name="from"/>
+            <input class="pure-input-1-2" placeholder="to..." type="number" th:name="to"/>
+            <button  class="pure-button pure-input-1-2 pure-button-primary" type="submit">Run</button>
+        </form>
+
+</body>
+</html>

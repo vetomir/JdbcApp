@@ -24,7 +24,7 @@ public class Config {
 
 /*    @EventListener(ApplicationReadyEvent.class)
     public void init(){
-        final String sql = "CREATE TABLE cars(car_id integer, title VARCHAR (255), url VARCHAR (255), color VARCHAR (255), PRIMARY KEY (car_id))";
+        final String sql = "CREATE TABLE cars(car_id integer, mark VARCHAR (255), model VARCHAR (255), color VARCHAR (255), year int , PRIMARY KEY (car_id))";
         jdbcTemplate().update(sql);
     }*/
 }
