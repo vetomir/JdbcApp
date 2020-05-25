@@ -1,7 +1,9 @@
 package pl.gregorymartin.akademiaspringaw7.db;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.event.EventListener;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -19,4 +21,10 @@ public class Config {
     public JdbcTemplate jdbcTemplate(){
         return new JdbcTemplate(dataSource);
     }
+
+/*    @EventListener(ApplicationReadyEvent.class)
+    public void init(){
+        final String sql = "CREATE TABLE cars(car_id integer, title VARCHAR (255), url VARCHAR (255), color VARCHAR (255), PRIMARY KEY (car_id))";
+        jdbcTemplate().update(sql);
+    }*/
 }
